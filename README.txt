@@ -1,70 +1,127 @@
-README.txt - Calmify Project Setup Instructions
+# 🧘 Calmify — Yoga Class Booking Platform
 
-This file describes how to set up and run the Calmify Yoga Class Booking Platform.
+A full-stack web application that connects yoga students with instructors, enabling seamless class discovery, booking management, and instructor analytics.
 
-1. Project URL (Live Project Website)
+> *"Book. Breathe. Balance."*
 
-As this is a local development setup, your live project URL will depend on your local server configuration.
-Assuming you have placed the 'calmify' folder in your web server's document root (e.g., 'htdocs' for XAMPP), the full URL for your site will typically be:
+---
 
-http://localhost/calmify/
+## 🌟 Features
 
-2. Database Setup
+### For Students
+- Browse and search yoga classes by studio and time
+- Book classes with real-time availability
+- View and manage upcoming bookings via personal dashboard
+- Submit reviews for instructors
+- Update personal profile
 
-The site requires a MySQL database.
+### For Instructors
+- Manage instructor profile and bio
+- View all student bookings
+- Access insights dashboard with booking statistics and timeslot analytics
+- Track upcoming classes and student reviews
 
-a.  Database Name: calmify
+### Platform
+- Role-based authentication (Student / Instructor)
+- Session management for secure access
+- Responsive UI built with Bootstrap 5
 
-b.  Database Username/Password:
-* Username: root
-* Password: `` (empty string)
+---
 
-**Important:** If your MySQL setup uses different credentials (e.g., a password for 'root' or a different user), you MUST update these lines in `php/config.php`:
+## 🛠️ Tech Stack
 
-```php/config.php - 
-<?php
-$conn = new mysqli("localhost", "your_db_username", "your_db_password", "calmify");
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-?>
+| Layer | Technology |
+|-------|-----------|
+| Backend | PHP |
+| Database | MySQL |
+| Frontend | HTML5, CSS3, JavaScript, Bootstrap 5 |
+| Icons | FontAwesome |
+| JS Library | jQuery 3.7.1 |
+
+---
+
+## 📁 Project Structure
+
+```
+calmify/
+├── index.php                  # Landing page
+├── booking.php                # Class booking page (students)
+├── dashboard.php              # Student dashboard
+├── instructor.php             # Instructor profile page
+├── instructor_bookings.php    # Instructor booking management
+├── insights.php               # Instructor analytics dashboard
+├── user_profile.php           # User profile management
+├── css/
+│   └── style.css              # Custom styles
+├── js/
+│   └── script.js              # Frontend interactions
+├── php/
+│   ├── config.php             # Database connection
+│   ├── login.php / logout.php # Auth handlers
+│   ├── book_class.php         # Booking logic
+│   ├── get_classes.php        # Class data API
+│   ├── get_bookings.php       # Booking data API
+│   ├── get_instructor_*.php   # Instructor data APIs
+│   ├── submit_review.php      # Review submission
+│   ├── get_booking_stats.php  # Analytics data
+│   └── update_*_profile.php  # Profile update handlers
+├── images/                    # Instructor/UI images
+└── calmify.sql                # Full database schema
 ```
 
-c.  Create Database and Tables:
-* Ensure your MySQL server is running.
-* Open phpMyAdmin (usually at http://localhost/phpmyadmin).
-* Create a new database named calmify.
-* Import your database schema SQL file (e.g., calmify.sql if you have one) into this new calmify database. This file should define the users, instructors, classes, bookings, and reviews tables.
+---
 
-3. Initial User Accounts (Optional but Recommended)
+## 🚀 Getting Started
 
-You can create initial user accounts by running the provided setup scripts.
+### Prerequisites
+- XAMPP (or any local PHP/MySQL server)
+- PHP 7.4+
+- MySQL 5.7+
 
-a.  Test User Account (Non-Admin):
-* Access this URL in your browser: http://localhost/calmify/php/db_user.php
-* This will create a regular user with the following credentials:
-* Username (Email): testuser@example.com
-* Password: Test@1234
+### Installation
 
-b.  Test Instructor Account (Admin/Instructor Role):
-* Access this URL in your browser: http://localhost/calmify/php/db_ins.php
-* This will create an instructor user with the following credentials:
-* Username (Email): instructortest@example.com
-* Password: Instructor@1234
+```bash
+# 1. Clone the repository
+git clone https://github.com/manvi06/Calmify.git
 
-**Important:** These `db_user.php` and `db_ins.php` files are for initial setup only. For a live server, they should be deleted or secured to prevent unauthorized access.
+# 2. Move the project folder to your XAMPP htdocs directory
+# Windows: C:\xampp\htdocs\calmify
 
-4. Project Files Placement
+# 3. Start Apache and MySQL in XAMPP Control Panel
 
-Place the entire calmify/ project folder (containing all PHP, CSS, JS, and image files) into your web server's document root.
+# 4. Create the database
+# - Open phpMyAdmin (http://localhost/phpmyadmin)
+# - Create a new database named 'calmify'
+# - Import calmify.sql into the database
 
-For XAMPP: C:\xampp\htdocs\
+# 5. Visit the site
+# Open: http://localhost/calmify/
+```
 
+### Test Accounts
+| Role | Email | Password |
+|------|-------|----------|
+| Student | testuser@example.com | Test@1234 |
+| Instructor | instructortest@example.com | Instructor@1234 |
 
-5. Usage
+---
 
-Once setup is complete:
+## 📸 Screenshots
 
-Open your web browser and navigate to http://localhost/calmify/.
+> *Coming soon*
 
-Use the provided test credentials to log in and explore the user and instructor features.
+---
+
+## 🔮 Future Improvements
+
+- [ ] Deploy to cloud (e.g. Railway, Render, or AWS)
+- [ ] Add payment integration for premium class bookings
+- [ ] Email notifications for booking confirmations
+- [ ] AI-powered class recommendations based on user history
+- [ ] Mobile app version
+
+---
+
+## 👩‍💻 Author
+
+**Manvi Singh** — [LinkedIn](https://www.linkedin.com/in/manvi-singh) · [GitHub](https://github.com/manvi06)
