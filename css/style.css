@@ -1,0 +1,656 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    /* Main linear gradient for the entire body - this will apply to ALL pages */
+    background: linear-gradient(to bottom, #f4a261, #e9c46a, #ffdd9d); 
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar {
+    position: sticky; /* Make navbar sticky */
+    top: 0; /* Stick to the top */
+    z-index: 1000; 
+    background: linear-gradient(to right, #f4a261, #e9c46a); /* Keep distinct gradient */
+    width: 100%;
+    padding: 10px 0;
+}
+
+.navbar-nav {
+    width: 100%;
+    justify-content: space-around;
+}
+
+.nav-link {
+    color: white !important;
+    font-weight: 500;
+    margin: 0 15px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+    background-color: #612734;
+    color: #fff3b0 !important;
+}
+
+.nav-link.active {
+    color: #fff3b0 !important;
+    font-weight: bold;
+}
+
+.hero {
+    min-height: 500px;
+    padding: 50px 0;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.hero .lead {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.calmify-logo-container {
+    width: 250px;
+    height: 250px;
+    margin: 0 auto 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calmify-logo {
+    max-width: 100%;
+    max-height: 100%;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.btn-primary {
+    background-color: #f4a261;
+    border-color: #f4a261;
+    color: white;
+    border-radius: 5px;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #e76f51;
+    border-color: #e76f51;
+}
+
+.btn-secondary {
+    background-color: #f4a261; 
+    border-color: #f4a261;
+    color: white;
+    border-radius: 5px;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #e76f51;
+    border-color: #e76f51;
+}
+
+.btn-outline-primary {
+    color: #f4a261;
+    border-color: #f4a261;
+    background-color: transparent;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-primary:hover {
+    color: white;
+    background-color: #e76f51;
+    border-color: #e76f51;
+}
+
+.content-section {
+    padding: 40px 0;
+    background: transparent;
+    color: #612734;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.content-text {
+    font-family: 'Georgia', serif;
+    font-size: 2.2rem;
+    line-height: 1.3;
+    color: #612734;
+}
+
+.yoga-poses-img {
+    max-width: 90%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Common heading styles for all pages */
+.team-heading, .featured-heading, .dashboard-section-heading, h1, h2 {
+    font-family: 'Georgia', serif;
+    font-size: 1.8rem; 
+    color: #612734;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 15px;
+}
+
+.container.dashboard-container h2,
+.container.profile-container h1,
+.container.instructor-container h1, 
+.container.instructor-bookings-container h2 { 
+    color: #612734; 
+    font-size: 2.2rem; 
+    text-align: center; 
+}
+
+
+.instructor-card {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    transition: transform 0.2s ease;
+}
+
+.instructor-card:hover {
+    transform: translateY(-5px);
+}
+
+.instructor-card h5 {
+    color: #612734; 
+}
+
+.instructor-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid #e9c46a;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.featured-class-card {
+    border: 1px solid rgba(221, 221, 221, 0.5);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+    margin-bottom: 20px; /* Vertical space below each card */
+    height: 100%;
+}
+
+.featured-class-card:hover {
+    transform: translateY(-5px);
+}
+
+.featured-class-card .card-body {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+}
+
+.featured-class-card .card-title {
+    color: #612734; 
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.featured-class-card .card-text {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.footer {
+    color: #612734;
+    padding: 40px 0;
+    margin-top: auto;
+}
+
+.footer-content {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.footer-content h3 {
+    width: 100%;
+    font-size: 2.5rem;
+    margin-bottom: 25px;
+    color: #612734
+}
+
+.footer-details {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 100%;
+    color: #612734
+}
+
+.footer-details p {
+    margin: 0 10px 10px 10px;
+    flex-basis: 30%;
+    text-align: left;
+    font-size: 0.95rem;
+}
+.footer-details p:nth-child(2) {
+    text-align: center;
+}
+.footer-details p:nth-child(3) {
+    text-align: right;
+}
+
+.fa-brands {
+    font-size: 1.5rem;
+    margin: 0 8px;
+    color: #612734;
+    transition: color 0.3s ease;
+}
+
+.fa-brands:hover {
+    color: #ffffff;
+}
+.dashboard-content {
+    width: 100%;
+    max-width: 800px; 
+    margin-top: 20px; 
+}
+
+/* For the logo containers used in dashboard, profile, and instructor pages */
+.dashboard-logo-container, .profile-logo-container {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dashboard-logo, .profile-logo {
+    max-width: 100%;
+    max-height: 100%;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+/* Ensure content containers on transparent pages have correct background */
+.container.dashboard-container,
+.container.profile-container,
+.container.instructor-container, 
+.container.instructor-bookings-container {
+    background: transparent; /* body gradient shows through */
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+/* Styles for booking/review cards on dashboard and instructor bookings */
+.booking-card {
+    background-color: rgba(244, 162, 97, 0.8); 
+    color: white; 
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    text-align: left;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.booking-card h5 {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: white; 
+}
+.booking-card p {
+    margin-bottom: 0;
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.9); 
+}
+/* Message for no classes/bookings/reviews */
+.no-classes-message {
+    color: #612734; 
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Specific styling for map container on booking page */
+#map {
+    height: 400px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.9); /* solid background */
+}
+
+/* Styling for insights charts solid background and dynamic height */
+.chart-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-height: 500px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+.chart-container h4 {
+    color: #612734; 
+    margin-bottom: 15px;
+    text-align: center;
+}
+.chart-container canvas {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 200px;
+}
+
+/* Modal styling */
+.modal-content {
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.95);
+}
+.modal-header {
+    background: linear-gradient(to right, #f4a261, #e9c46a);
+    color: white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.modal-title {
+    color: white;
+}
+.modal-body {
+    color: #333; 
+}
+
+.profile-detail-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.profile-detail-row:last-child {
+    border-bottom: none;
+}
+
+.profile-label {
+    font-family: 'Georgia', serif;
+    font-size: 1.2rem;
+    color: #612734; 
+    text-align: left;
+    flex: 1;
+}
+
+/* Style for the input fields */
+.profile-value-input {
+    font-size: 1.2rem;
+    color: rgb(66, 24, 33);
+    text-align: right;
+    flex: 1;
+    font-weight: bold;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px 10px;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0.7); 
+}
+
+/* Style for textareas in profile */
+textarea.profile-value-input {
+    resize: vertical; 
+    min-height: 80px; 
+}
+.profile-button {
+    background-color: #f4a261;
+    border-color: #f4a261;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+.profile-button:hover {
+    background-color: #e76f51;
+    color: white; 
+}
+
+
+.profile-buttons-container {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 40px;
+}
+
+.profile-button-discard, .profile-button-save {
+    padding: 10px 30px;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+    flex: 1;
+    margin: 0 10px;
+}
+
+.profile-button-discard {
+    background-color: #e76f51;
+    border-color: #e76f51;
+    color: white;
+}
+.profile-button-discard:hover {
+    background-color: #d15c44;
+    border-color: #d15c44;
+}
+
+.profile-button-save {
+    background-color: #f4a261;
+    border-color: #f4a261;
+    color: white;
+}
+.profile-button-save:hover {
+    background-color: #e76f51;
+    border-color: #e76f51;
+}
+
+/* Media Queries */
+@media (max-width: 992px) {
+    .content-text {
+        font-size: 1.8rem;
+    }
+    .footer-details p {
+        flex-basis: 45%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        min-height: 400px;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero .lead {
+        font-size: 1.2rem;
+    }
+
+    .navbar-nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-link {
+        margin: 5px 0;
+        padding: 8px 12px;
+    }
+
+    .instructor-card {
+        margin: 10px 0;
+    }
+
+    .footer-details p {
+        flex-basis: 100%;
+        text-align: center;
+    }
+
+    .fa-brands {
+        font-size: 1.2rem;
+    }
+
+    .chart-container {
+        max-height: 400px;
+    }
+
+    .content-text {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+    .hero .lead {
+        font-size: 1rem;
+    }
+    .content-text {
+        font-size: 1.2rem;
+    }
+    .calmify-logo-container {
+        width: 180px;
+        height: 180px;
+    }
+    .team-heading, .featured-heading, .footer-content h3 {
+        font-size: 1.8rem;
+    }
+    /* Dashboard/Profile/Instructor headings for small screens */
+    .container.dashboard-container h2,
+    .container.profile-container h1,
+    .container.instructor-container h1,
+    .container.instructor-bookings-container h2 {
+        font-size: 2rem;
+    }
+}
+/* Mobile Responsiveness for Navbar */
+@media (max-width: 991.98px) { 
+    .navbar {
+        min-height: 60px; 
+        display: flex; 
+        align-items: center; 
+        justify-content: space-between; 
+        padding: 0 15px; 
+        box-sizing: border-box; 
+    }
+
+    .navbar-brand.d-lg-none {
+        display: block !important; 
+        color: white !important;
+        font-size: 1.5rem !important; 
+        margin-left: 0 !important; 
+    }
+
+    .navbar-toggler {
+        display: block !important; 
+        border: 1px solid rgba(255, 255, 255, 0.5) !important; 
+        background-color: rgba(255, 255, 255, 0.2) !important; 
+    }
+
+    .navbar-collapse:not(.show) {
+        display: none;
+    }
+
+    .hero {
+        min-height: 400px;
+        padding: 40px 15px;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero .lead {
+        font-size: 1.2rem;
+    }
+
+    .navbar-nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-link {
+        margin: 5px 0;
+        padding: 8px 12px;
+    }
+
+    .instructor-card, .featured-class-card {
+        margin: 10px 0;
+    }
+
+    .footer-details p {
+        flex-basis: 100%;
+        text-align: center;
+    }
+
+    .fa-brands {
+        font-size: 1.2rem;
+    }
+
+    .chart-container {
+        max-height: 400px;
+    }
+
+    .content-text {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) { /* smaller screens */
+    .hero h1 {
+        font-size: 2rem;
+    }
+    .hero .lead {
+        font-size: 1rem;
+    }
+    .content-section h2 {
+        font-size: 2rem;
+    }
+    .footer-content h3 {
+        font-size: 1.5rem;
+    }
+}
